@@ -34,7 +34,7 @@ async function main() {
   console.log(pc.cyan(`\nScaffolding into ${pc.bold(targetName)}...\n`));
 
   // Public repo tarball; default branch is used automatically
-  const repo = "github:detheuss/rad-pwa";
+  const repo = "github:detheuss/rad-pwa#master";
 
   try {
     await downloadTemplate(repo, {
