@@ -1,6 +1,6 @@
 {
   "name": "create-rad-pwa",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Create a new Rad-PWA from the template",
   "type": "module",
   "bin": {
@@ -11,7 +11,7 @@
   "engines": { "node": ">=20.10.0" },
   "publishConfig": { "access": "public" },
   "dependencies": {
-    "degit": "^2.8.4",
+    "giget": "^1.2.3",
     "prompts": "^2.4.2",
     "picocolors": "^1.0.0"
   }

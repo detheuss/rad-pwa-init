@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import prompts from "prompts";
 import pc from "picocolors";
-import degit from "degit";
+import { downloadTemplate } from "giget";
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
@@ -33,12 +33,14 @@ async function main() {
 
   console.log(pc.cyan(`\nScaffolding into ${pc.bold(targetName)}...\n`));
 
-  // Change this to your real GitHub path if different
-  const repo = "detheuss/AppTemplates/rad-pwa"; // or "your-user/your-repo"
-  const emitter = degit(repo, { cache: false, force: true, verbose: false });
+  // Public repo tarball; default branch is used automatically
+  const repo = "github:detheuss/rad-pwa";
 
   try {
-    await emitter.clone(targetDir);
+    await downloadTemplate(repo, {
+      dir: targetDir,
+      force: true,
+    });
   } catch (err) {
     exit(`Failed to download template: ${String(err)}`);
   }
